@@ -3,7 +3,9 @@ Project for CSCI 455 — Principles of Computing Security, Spring 2018.
 
 Gregory Goh [@ShinyTeeth](https://github.com/ShinyTeeth)
 
+William Frey[@Will-Frey](https://github.com/Will-Frey)
 
+Tommy Bohde[@InsanesTheName](https://github.com/InsanesTheName)
 
 ## Abstract:
 Secure voting system implemented in C#. 
