@@ -11,6 +11,7 @@ namespace onevote.Repositories
             return new Ballot()
             {
                 ID = 0,
+                ElectionID = 0,
                 VotedA = true,
                 VotedB = false,
                 DateSubmitted = DateTime.Now
