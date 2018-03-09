@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using onevote.Models;
+using onevote.Repositories;
 
 namespace onevote
 {
@@ -23,8 +24,12 @@ namespace onevote
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<UserContext>(options =>
-                              options.UseInMemoryDatabase("name"));
+            // services.AddDbContext<UserContext>(options =>
+            //                   options.UseInMemoryDatabase("onevote"));
+            // services.AddDbContext<BallotContext>(options =>
+            //                   options.UseInMemoryDatabase("onevote"));
+            services.AddTransient<IBallotRepository, BallotRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             services.AddMvc();
         }
 
