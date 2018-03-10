@@ -30,6 +30,8 @@ namespace onevote
             //                   options.UseInMemoryDatabase("onevote"));
             services.AddTransient<IBallotRepository, BallotRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICandidateRepository, CandidateRepository>();
+            services.AddTransient<IElectionRepository, ElectionRepository>();
             services.AddMvc();
         }
 

@@ -1,0 +1,61 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>Elections</h2>
+
+<a asp-page="Add">Add an Election</a>
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Candidate A
+            </th>
+            <th>
+                Candidate B
+            </th>
+            <th>
+                Start Time
+            </th>
+            <th>
+                End Time
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                ID
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @(Model.Election.CandidateA.FirstName + " " + Model.Election.CandidateA.LastName)
+            </td>
+            <td>
+                @(Model.Election.CandidateB.FirstName + " " + Model.Election.CandidateB.LastName)
+            </td>
+            <td>
+                @Model.Election.StartDateTime.ToShortDateString()
+            </td>
+            <td>
+                @Model.Election.EndDateTime.ToShortDateString()
+            </td>
+            <td>
+                @Model.Election.Location
+            </td>
+            <td>
+                @Model.Election.ID
+            </td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@Model.Election.ID">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

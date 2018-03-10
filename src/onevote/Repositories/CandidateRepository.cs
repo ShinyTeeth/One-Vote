@@ -7,11 +7,7 @@ namespace onevote.Repositories
     {
         public Candidate GetByID(int id)
         {
-            return new Candidate()
-            {
-                ID = 0,
-
-            };
+            return new Candidate("Alex", "Z.");
         }
     }
 }

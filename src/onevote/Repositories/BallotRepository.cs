@@ -8,18 +8,50 @@ namespace onevote.Repositories
     {
         public Ballot GetByID(int id)
         {
-            return new Ballot()
+            if (id == 0)
             {
-                ID = 0,
-                ElectionID = 0,
-                VotedA = true,
-                VotedB = false,
-                DateSubmitted = DateTime.Now
-            };
+                return new Ballot()
+                {
+                    ID = 0,
+                    ElectionID = 0,
+                    VotedA = true,
+                    VotedB = false,
+                    DateSubmitted = DateTime.Now
+                };
+            }
+
+            if (id == 1)
+            {
+                return new Ballot()
+                {
+                    ID = 1,
+                    ElectionID = 0,
+                    VotedA = true,
+                    VotedB = false,
+                    DateSubmitted = DateTime.Now
+                };
+            }
+
+            if (id == 2)
+            {
+                return new Ballot()
+                {
+                    ID = 2,
+                    ElectionID = 0,
+                    VotedA = false,
+                    VotedB = true,
+                    DateSubmitted = DateTime.Now
+                };
+            }
+
+            return null;
         }
         public List<Ballot> GetAll()
         {
             List<Ballot> ballots = new List<Ballot>();
+            ballots.Add(GetByID(0));
+            ballots.Add(GetByID(1));
+            ballots.Add(GetByID(2));
             return ballots;
         }
     }
