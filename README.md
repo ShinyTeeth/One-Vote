@@ -22,7 +22,8 @@ To download code: `$ git clone https://github.com/ShinyTeeth/One-Vote.git`
 
 #### Instructions
 To run the code, ensure that the .NET CLI is installed as linked above.
-A pre-compiled build of this project has been included in [release/](https://github.com/ShinyTeeth/One-Vote/tree/master/release)
+A pre-compiled build of this project has been included in 
+[release/](https://github.com/ShinyTeeth/One-Vote/tree/master/release).
 Open a shell at the root of this directory, and type the following:
 
 ```
