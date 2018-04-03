@@ -13,7 +13,7 @@ namespace onevote.Repositories
                 return new Ballot()
                 {
                     ID = 0,
-                    ElectionID = 0,
+                    Election = new Election(),
                     VotedA = true,
                     VotedB = false,
                     DateSubmitted = DateTime.Now
@@ -25,7 +25,7 @@ namespace onevote.Repositories
                 return new Ballot()
                 {
                     ID = 1,
-                    ElectionID = 0,
+                    Election = new Election(),
                     VotedA = true,
                     VotedB = false,
                     DateSubmitted = DateTime.Now
@@ -37,7 +37,7 @@ namespace onevote.Repositories
                 return new Ballot()
                 {
                     ID = 2,
-                    ElectionID = 0,
+                    Election = new Election(),
                     VotedA = false,
                     VotedB = true,
                     DateSubmitted = DateTime.Now
