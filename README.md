@@ -22,14 +22,15 @@ To download code: `$ git clone https://github.com/ShinyTeeth/One-Vote.git`
 
 #### Instructions
 To run the code, ensure that the .NET CLI is installed as linked above.
-Then open up a shell at the root of this directory, and type the following:
+A pre-compiled build of this project has been included in [release/](https://github.com/ShinyTeeth/One-Vote/tree/master/release)
+Open a shell at the root of this directory, and type the following:
 
 ```
-cd src/onevote
-dotnet run
+cd release
+dotnet onevote.dll
 ```
 
-Navigate to http://localhost:5000
+Navigate to https://localhost
 
 #### License
 MIT licensed. See the bundled [LICENSE](/LICENSE) file for more details.
