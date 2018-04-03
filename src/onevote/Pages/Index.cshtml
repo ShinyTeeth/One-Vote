@@ -4,6 +4,10 @@
     ViewData["Title"] = "Home page";
 }
 
+<style> 
+    th, td { padding: 0.2em; }
+</style> 
+
 <h2>Elections</h2>
 
 <a asp-page="Add">Add an Election</a>
@@ -35,10 +39,10 @@
     <tbody>
         <tr>
             <td>
-                @(Model.Election.CandidateA.FirstName + " " + Model.Election.CandidateA.LastName)
+                @(Model.Election.CandidateA.FullName)
             </td>
             <td>
-                @(Model.Election.CandidateB.FirstName + " " + Model.Election.CandidateB.LastName)
+                @(Model.Election.CandidateA.FullName)
             </td>
             <td>
                 @Model.Election.StartDateTime.ToShortDateString()

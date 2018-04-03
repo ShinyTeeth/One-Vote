@@ -7,6 +7,11 @@ namespace onevote.Models
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string FullName 
+        { 
+            get { return FirstName + " " + LastName; } 
+            private set {} 
+        } 
         public DateTime BirthDate { get; set; }
 
         public Candidate(string firstName, string lastName)
