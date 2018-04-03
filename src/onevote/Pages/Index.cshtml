@@ -1,5 +1,5 @@
 @page
-@model IndexModel
+@model Pages.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
@@ -37,29 +37,32 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        @foreach(var item in Model.Elections)
+        {
+            <tr>
             <td>
-                @(Model.Election.CandidateA.FullName)
+                @Html.DisplayFor(modelItem => item.FullNameA)
             </td>
             <td>
-                @(Model.Election.CandidateA.FullName)
+                @Html.DisplayFor(modelItem => item.FullNameB)
             </td>
             <td>
-                @Model.Election.StartDateTime.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.StartDateTime)
             </td>
             <td>
-                @Model.Election.EndDateTime.ToShortDateString()
+                @Html.DisplayFor(modelItem => item.EndDateTime)
             </td>
             <td>
-                @Model.Election.Location
+                @Html.DisplayFor(modelItem => item.Location)
             </td>
             <td>
-                @Model.Election.ID
+                @Html.DisplayFor(modelItem => item.ID)
             </td>
             <td>
-                <a asp-page="Edit" asp-route-id="@Model.Election.ID">Edit</a>
+                <a asp-page="Edit" asp-route-id="@Model.Elections[0].ID">Edit</a>
             </td>
         </tr>
+        }
     </tbody>
 </table>
 
