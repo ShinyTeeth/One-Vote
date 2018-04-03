@@ -11,9 +11,10 @@ using System;
 namespace onevote.Migrations
 {
     [DbContext(typeof(OnevoteContext))]
-    partial class OnevoteContextModelSnapshot : ModelSnapshot
+    [Migration("20180403054628_ballotElectionId")]
+    partial class ballotElectionId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
