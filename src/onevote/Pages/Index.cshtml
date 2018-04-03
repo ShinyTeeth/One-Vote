@@ -1,8 +1,12 @@
 @page
-@model IndexModel
+@model Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Elections";
 }
+
+<style> 
+    th, td { padding: 0.2em; }
+</style> 
 
 <h2>Elections</h2>
 
@@ -33,29 +37,32 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                @(Model.Election.CandidateA.FirstName + " " + Model.Election.CandidateA.LastName)
-            </td>
-            <td>
-                @(Model.Election.CandidateB.FirstName + " " + Model.Election.CandidateB.LastName)
-            </td>
-            <td>
-                @Model.Election.StartDateTime.ToShortDateString()
-            </td>
-            <td>
-                @Model.Election.EndDateTime.ToShortDateString()
-            </td>
-            <td>
-                @Model.Election.Location
-            </td>
-            <td>
-                @Model.Election.ID
-            </td>
-            <td>
-                <a asp-page="Edit" asp-route-id="@Model.Election.ID">Edit</a>
-            </td>
-        </tr>
+        @foreach(var item in Model.Elections)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    <a asp-page="Vote" asp-route-id="@item.ID">Vote</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
 
