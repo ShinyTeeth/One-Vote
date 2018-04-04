@@ -33,5 +33,11 @@ dotnet onevote.dll
 
 Navigate to https://localhost
 
+If your browser shows "not trusted" or "not secure", this is because the SSL certificate
+is self-signed. Add the certificate to your operating system's trusted root certificate
+authority and restart your browser to remove this error. Note that this is not necessary 
+for SSL to function - the data is still encrypted, the error simply means that the browser 
+does not have the server (localhost) in its list of trusted CAs. 
+
 #### License
 MIT licensed. See the bundled [LICENSE](/LICENSE) file for more details.
