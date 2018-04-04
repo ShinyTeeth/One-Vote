@@ -12,7 +12,7 @@ namespace onevote.Pages
 
         public void OnGet()
         {
-            Message = "Your application description page.";
+            Message = "This is Group 13's Secure Election project for CSCI-455";
         }
     }
 }
