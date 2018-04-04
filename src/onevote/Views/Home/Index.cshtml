@@ -1,0 +1,68 @@
+@page
+@model Pages.IndexModel
+@{
+    ViewData["Title"] = "Elections";
+}
+
+<style> 
+    th, td { padding: 0.2em; }
+</style> 
+
+<h2>Elections</h2>
+
+<a asp-page="Add">Add an Election</a>
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Candidate A
+            </th>
+            <th>
+                Candidate B
+            </th>
+            <th>
+                Start Time
+            </th>
+            <th>
+                End Time
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                ID
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Elections)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FullNameB)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndDateTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    <a asp-page="Vote" asp-route-id="@item.ID">Vote</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

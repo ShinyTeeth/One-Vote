@@ -1,0 +1,61 @@
+@page "{id:int}"
+@model Pages.VoteModel
+@{
+    ViewData["Title"] = "Vote";
+}
+
+<style> 
+    th, td { padding: 0.2em; }
+</style> 
+
+<h2>Vote</h2>
+
+<a asp-page="Index">Back to Elections</a>
+
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Candidate A
+            </th>
+            <th>
+                Candidate B
+            </th>
+            <th>
+                Election ID
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Election.FullNameA)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Election.FullNameB)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Election.ID)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+
+<h4>Ballot</h4>
+
+<form method="POST">
+    <div>
+        @Html.RadioButtonFor(m => m.VotedFor, "CandidateA")
+        <label>Candidate A</label>
+        <br />
+        @Html.RadioButtonFor(m => m.VotedFor, "CandidateB")
+        <label>Candidate B</label>
+        <br />
+    </div>
+    <div>
+        <input type="submit" value="Vote" />
+    </div>
+</form>
