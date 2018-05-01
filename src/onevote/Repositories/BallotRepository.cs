@@ -10,38 +10,17 @@ namespace onevote.Repositories
         {
             if (id == 0)
             {
-                return new Ballot()
-                {
-                    ID = 0,
-                    Election = new Election(),
-                    VotedA = true,
-                    VotedB = false,
-                    DateSubmitted = DateTime.Now
-                };
+                return new Ballot(0, DateTime.Now, true);
             }
 
             if (id == 1)
             {
-                return new Ballot()
-                {
-                    ID = 1,
-                    Election = new Election(),
-                    VotedA = true,
-                    VotedB = false,
-                    DateSubmitted = DateTime.Now
-                };
+                return new Ballot(1, DateTime.Now, true);
             }
 
             if (id == 2)
             {
-                return new Ballot()
-                {
-                    ID = 2,
-                    Election = new Election(),
-                    VotedA = false,
-                    VotedB = true,
-                    DateSubmitted = DateTime.Now
-                };
+                return new Ballot(2, DateTime.Now, true);
             }
 
             return null;

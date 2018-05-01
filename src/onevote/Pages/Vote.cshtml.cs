@@ -27,24 +27,20 @@ namespace onevote.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            Ballot ballot = new Ballot();
-            ballot.DateSubmitted = DateTime.Now;
-            ballot.EID = _electionID;
             if (VotedFor == "CandidateA")
             {
-                ballot.VotedA = true;
-                ballot.VotedB = false;
+                Ballot ballotA = new Ballot(_electionID, DateTime.Now, true);
+                _db.Ballots.Add(ballotA);
             }
             else if (VotedFor == "CandidateB")
             {
-                ballot.VotedA = false;
-                ballot.VotedB = true;
+                Ballot ballotB = new Ballot(_electionID, DateTime.Now, false);
+                _db.Ballots.Add(ballotB);
             }
             else
             {
                 return Page();
             }
-            _db.Ballots.Add(ballot);
             await _db.SaveChangesAsync();
             return RedirectToPage("./Index");
         }
