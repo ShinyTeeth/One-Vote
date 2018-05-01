@@ -37,8 +37,8 @@ namespace onevote.Pages
             }
             else if (VotedFor == "CandidateB")
             {
-                ballot.VotedA = true;
-                ballot.VotedB = false;
+                ballot.VotedA = false;
+                ballot.VotedB = true;
             }
             else
             {
