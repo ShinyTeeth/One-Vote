@@ -15,7 +15,22 @@ Secure voting system implemented in C#.
 #### Downloads
 To download code: `$ git clone https://github.com/ShinyTeeth/One-Vote.git`
 
-#### Scripts
+#### Structure
+The following is a summary of which source directories and files are vital
+to the project.
+
+- `Migrations` contains a record of database migrations based on 
+.NET Entity Framework Core and a Code First approach.
+- `Models` contains the models used for structuring data. Important
+to note is that `OnevoteContext.cs` is what establishes an
+Object-Relational Mapping (ORM) interface between the database
+and this webapp.
+- `Pages` contains the front-end logic and design for the pages of this webapp.
+- `Repositories` is NOT used in the webapp; it exists for testing purposes
+only, if a database instance is not obtainable.
+- `Program.cs` and `Startup.cs` define the services and middleware used for
+the webapp, as well as the parameters for running the webapp.
+
 
 #### Requirements
 [.NET Core](https://www.microsoft.com/net/learn/get-started/) >= 2.1.4
